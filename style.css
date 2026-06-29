@@ -1,0 +1,211 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   BODY (LIGHT MODE)
+========================= */
+
+body {
+    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+    min-height: 100vh;
+    transition: 0.3s ease;
+    color: #222;
+    padding: 15px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #0d6efd;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-container {
+    max-width: 1100px;
+    margin: 25px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   FORM GRID
+========================= */
+
+.patient-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* =========================
+   LABELS
+========================= */
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: inherit;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    background: #f9fbfd;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13,110,253,0.3);
+    background: white;
+}
+
+/* TEXTAREA */
+textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 27px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(13,110,253,0.3);
+}
+
+/* logout button */
+.logout-btn {
+    background: #dc3545;
+    padding: 10px 16px;
+    border-radius: 8px;
+    width: auto;
+}
+
+/* =========================
+   ERROR TEXT
+========================= */
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+    background: #121826;
+    color: #e4e6eb;
+}
+
+/* containers */
+body.dark .dashboard-container,
+body.dark .login-container {
+    background: #1e2635;
+    color: #e4e6eb;
+}
+
+/* header */
+body.dark header {
+    background: #0b1220;
+}
+
+/* inputs */
+body.dark input,
+body.dark select,
+body.dark textarea {
+    background: #2a3446;
+    color: white;
+    border: 1px solid #3a465f;
+}
+
+/* focus in dark */
+body.dark input:focus,
+body.dark select:focus,
+body.dark textarea:focus {
+    box-shadow: 0 0 8px rgba(13,110,253,0.4);
+}
+
+/* buttons */
+body.dark button {
+    box-shadow: none;
+}
