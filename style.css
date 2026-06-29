@@ -3,99 +3,108 @@
    RESET
 ========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* =========================
-   BODY (LIGHT MODE)
-========================= */
+html{
+    font-size:16px;
+    -webkit-text-size-adjust:100%;
+}
 
-body {
-    background: linear-gradient(135deg, #eef2f7, #dfe9f3);
-    min-height: 100vh;
-    transition: 0.3s ease;
-    color: #222;
-    padding: 15px;
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:linear-gradient(135deg,#eef2f7,#dfe9f3);
+    color:#222;
+    min-height:100vh;
+    margin:0;
+    padding:10px;
+    overflow-x:hidden;
 }
 
 /* =========================
    HEADER
 ========================= */
 
-header {
-    background: #0d6efd;
-    color: white;
-    padding: 18px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+header{
+    background:#0d6efd;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    padding:16px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+header h1{
+    font-size:clamp(20px,4vw,32px);
+}
+
+.header-buttons{
+    display:flex;
+    gap:10px;
 }
 
 /* =========================
-   LOGIN BOX
+   CONTAINERS
 ========================= */
 
-.login-container {
-    width: 100%;
-    max-width: 400px;
-    margin: 100px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.dashboard-container,
+.login-container{
+    width:100%;
+    max-width:1100px;
+    margin:15px auto;
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    overflow:hidden;
 }
 
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.login-container{
+    max-width:420px;
+}
+
+.dashboard-container h2,
+.login-container h2{
+    margin-bottom:20px;
 }
 
 /* =========================
-   DASHBOARD
+   FORM
 ========================= */
 
-.dashboard-container {
-    max-width: 1100px;
-    margin: 25px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.patient-form{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+    width:100%;
 }
 
-/* =========================
-   FORM GRID
-========================= */
-
-.patient-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+.form-group{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    min-width:0;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.full-width {
-    grid-column: span 2;
+.full-width{
+    grid-column:1 / -1;
 }
 
 /* =========================
    LABELS
 ========================= */
 
-label {
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: inherit;
+label{
+    margin-bottom:6px;
+    font-weight:600;
 }
 
 /* =========================
@@ -104,108 +113,167 @@ label {
 
 input,
 select,
-textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    outline: none;
-    font-size: 14px;
-    background: #f9fbfd;
-    transition: 0.3s;
+textarea{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    display:block;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    background:#f9fbfd;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
 }
 
 input:focus,
 select:focus,
-textarea:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 6px rgba(13,110,253,0.3);
-    background: white;
+textarea:focus{
+    border-color:#0d6efd;
+    background:#fff;
+    box-shadow:0 0 8px rgba(13,110,253,.25);
 }
 
-/* TEXTAREA */
-textarea {
-    min-height: 100px;
-    resize: none;
+textarea{
+    min-height:100px;
+    resize:vertical;
 }
 
 /* =========================
    BUTTONS
 ========================= */
 
-button {
-    width: 100%;
-    background: linear-gradient(135deg, #0d6efd, #0b5ed7);
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 27px;
+button{
+    border:none;
+    border-radius:10px;
+    padding:12px 16px;
+    background:#0d6efd;
+    color:#fff;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(13,110,253,0.3);
+button:hover{
+    background:#0b5ed7;
 }
 
-/* logout button */
-.logout-btn {
-    background: #dc3545;
-    padding: 10px 16px;
-    border-radius: 8px;
-    width: auto;
+.patient-form button{
+    width:100%;
+}
+
+.theme-btn{
+    background:#198754;
+}
+
+.logout-btn{
+    background:#dc3545;
 }
 
 /* =========================
-   ERROR TEXT
+   ERROR
 ========================= */
 
-.error {
-    color: red;
-    font-size: 12px;
-    margin-top: 4px;
+.error{
+    color:red;
+    font-size:12px;
+    margin-top:5px;
 }
 
 /* =========================
    DARK MODE
 ========================= */
 
-body.dark {
-    background: #121826;
-    color: #e4e6eb;
+body.dark{
+    background:#111827;
+    color:#fff;
 }
 
-/* containers */
+body.dark header{
+    background:#1f2937;
+}
+
 body.dark .dashboard-container,
-body.dark .login-container {
-    background: #1e2635;
-    color: #e4e6eb;
+body.dark .login-container{
+    background:#1e293b;
 }
 
-/* header */
-body.dark header {
-    background: #0b1220;
-}
-
-/* inputs */
 body.dark input,
 body.dark select,
-body.dark textarea {
-    background: #2a3446;
-    color: white;
-    border: 1px solid #3a465f;
+body.dark textarea{
+    background:#334155;
+    color:#fff;
+    border-color:#475569;
 }
 
-/* focus in dark */
-body.dark input:focus,
-body.dark select:focus,
-body.dark textarea:focus {
-    box-shadow: 0 0 8px rgba(13,110,253,0.4);
+/* =========================
+   TABLET & MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:8px;
+    }
+
+    header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .header-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .header-buttons button{
+        width:100%;
+    }
+
+    .dashboard-container,
+    .login-container{
+        padding:15px;
+        margin:10px auto;
+    }
+
+    .patient-form{
+        grid-template-columns:1fr;
+    }
+
+    .full-width{
+        grid-column:auto;
+    }
 }
 
-/* buttons */
-body.dark button {
-    box-shadow: none;
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:480px){
+
+    body{
+        padding:5px;
+    }
+
+    header{
+        padding:12px;
+    }
+
+    .dashboard-container,
+    .login-container{
+        padding:12px;
+    }
+
+    input,
+    select,
+    textarea{
+        padding:10px;
+        font-size:14px;
+    }
+
+    button{
+        width:100%;
+    }
 }
